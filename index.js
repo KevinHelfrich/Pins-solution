@@ -31,11 +31,11 @@ function checkLetter(solution, letter) {
 }
 
 function genSolution(characters) {
-    var sln = characters.pop();
-    while(characters.length){
+    var sln = characters[0];
+    for(var j = 1; j < characters.length; j++){
         var newSln = [];
         var charToReplace = pickLeastCommonChar(sln);
-        var newChar = characters.pop();
+        var newChar = characters[j];
         for (var i = 0; i < sln.length; i++){
             if(sln[i] === charToReplace){
                 newSln.push(charToReplace);
